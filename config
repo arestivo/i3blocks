@@ -1,0 +1,74 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+separator_block_width=15
+
+[battery]
+command=/usr/share/i3blocks/battery.py
+markup=pango
+interval=5
+
+[volume]
+#label=♪
+instance=Master
+#instance=PCM
+command=/usr/share/i3blocks/volume
+interval=once
+signal=10
+
+[brightness]
+command=/usr/share/i3blocks/brightness
+interval=30
+markup=pango
+
+[memory]
+label=MEM
+command=/usr/share/i3blocks/memory
+separator=false
+interval=30
+
+[swap]
+label=SWAP
+instance=swap
+command=/usr/share/i3blocks/memory
+interval=30
+
+[disk-home]
+instance=/home/arestivo
+command=/usr/share/i3blocks/disk
+interval=30
+
+[wireless]
+markup=pango
+instance=wlp3s0
+command=/usr/share/i3blocks/network
+color=#00FF00
+interval=10
+
+[load]
+command=/usr/share/i3blocks/load_average
+interval=10
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
