@@ -3,7 +3,7 @@ COLOR='#00FF00'
 
 if ! [ $CONNECTED ]; then
   TEXT='No VPN'
-  COLOR='#FF0000'
+  COLOR='#FFFF00'
 else
   TEXT=$CONNECTED
 fi
