@@ -155,6 +155,7 @@ bindcode 235 exec "xrandr | grep -q 'VGA-1 disconnected' && (xrandr --output VGA
 bar {
         status_command i3blocks
         position top
+        tray_output none
 }
 
 exec --no-startup-id dropbox start
