@@ -23,13 +23,17 @@
 # Global properties
 separator_block_width=15
 
+[key]
+command=/usr/share/i3blocks/keyindicator
+interval=1
+
 [battery]
 command=/usr/share/i3blocks/battery.py
 markup=pango
 interval=5
 
 [volume]
-#label=♪
+label=♪
 instance=Master
 #instance=PCM
 command=/usr/share/i3blocks/volume
@@ -71,4 +75,10 @@ interval=10
 
 [time]
 command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
+
+[dropbox]
+label=
+markup=pango
+command=/usr/share/i3blocks/dropbox
 interval=5
