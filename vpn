@@ -1,0 +1,20 @@
+CONNECTED=`nmcli -t -f name,type -c no c show --active | grep ":vpn$" | cut -d: -f1`
+COLOR='#00FF00'
+
+if ! [ $CONNECTED ]; then
+  TEXT='No VPN'
+  COLOR='#FF0000'
+else
+  TEXT=$CONNECTED
+fi
+
+echo $TEXT
+echo $TEXT
+echo $COLOR
+
+case $BLOCK_BUTTON in
+  1) nmcli -t -f name,type -c no c | grep ":vpn$" | cut -d: -f1 | dmenu | xargs -i nmcli con up "{}";;
+  3) if [ $CONNECTED ]; then
+       nmcli con down "$CONNECTED"
+     fi
+esac

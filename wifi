@@ -1,0 +1,17 @@
+CONNECTED=`nmcli -t -f device,connection -c no device status | grep wlp3s0 | cut -d: -f2`
+COLOR='#00FF00'
+
+if [ $CONNECTED = '--' ]; then
+  TEXT='No SSID'
+  COLOR='#FF0000'
+else
+  TEXT=$CONNECTED
+fi
+
+echo $TEXT
+echo $TEXT
+echo $COLOR
+
+case $BLOCK_BUTTON in
+  1) nmcli -t -f SSID d wifi list | dmenu | xargs -i nmcli con up "{}"
+esac
