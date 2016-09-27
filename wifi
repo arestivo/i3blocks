@@ -13,6 +13,6 @@ echo $TEXT
 echo $COLOR
 
 case $BLOCK_BUTTON in
-  1) nmcli -t -f SSID device wifi list | grep -v "\-\-" | awk '!a[$0]++'| dmenu | xargs -i sh -c 'R=$(nmcli con up "{}" 2>&1) || (i3-nagbar -m "$R" && nmcli device wifi connect "{}")'
+  1) nmcli -t -f SSID device wifi list | grep -v "\-\-" | awk '!a[$0]++'| dmenu | xargs -i sh -c 'R=$(nmcli con up "{}" 2>&1) || (i3-nagbar -m "$R" && nmcli device wifi connect "{}")';;
   3) nm-connection-editor
 esac
