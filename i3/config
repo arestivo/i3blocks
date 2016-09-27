@@ -150,6 +150,11 @@ bindsym $mod+r mode "resize"
 
 bindcode 235 exec "xrandr | grep -q 'VGA-1 disconnected' && (xrandr --output VGA-1 --off --output LVDS-1 --auto) || xrandr | sed -n -e '/VGA-1/,$p' | grep '^   ' | awk -vOR=' ' '{print $1}' | dmenu | xargs -i xrandr --output VGA-1 --mode {} --output LVDS-1 --primary --same-as VGA-1"
 
+bindsym F6 exec "xrandr --output VGA-1 --auto --right-of LVDS-1 --output LVDS-1 --auto"
+
+bindsym $mod+Prior move workspace to output left
+bindsym $mod+Next move workspace to output right
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
