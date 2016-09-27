@@ -13,6 +13,6 @@ echo $TEXT
 echo $COLOR
 
 case $BLOCK_BUTTON in
-  1) nmcli -t -f SSID d wifi list | dmenu | xargs -i nmcli con up "{}";;
+  1) OUTPUT=`nmcli -t -f SSID d wifi list | dmenu | xargs -i nmcli con up "{}"` || i3-nagbar -m "$OUTPUT";;
   3) nm-connection-editor
 esac
