@@ -1,0 +1,8 @@
+UPDATES=$(apt list --upgradable 2>&1 | grep upgradable | wc -l)
+if  [ "$UPDATES" -gt "0" ];then
+    COLOR='#CC0000'
+fi
+
+echo " $UPDATES"
+echo " $UPDATES"
+echo $COLOR
