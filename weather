@@ -50,6 +50,10 @@ else
   echo ""
 fi
 
+if [[ $BLOCK_BUTTON -eq 1 ]]; then
+  xdg-open "http://openweathermap.org/city/${CITY_ID}"
+fi
+
 if [[ "${WEATHER_TEMP}" -lt "${URGENT_LOWER}" ]] || [[ "${WEATHER_TEMP}" -gt "${URGENT_HIGHER}" ]]; then
   exit 33
 fi
